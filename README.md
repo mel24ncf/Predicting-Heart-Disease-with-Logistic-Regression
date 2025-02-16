@@ -51,7 +51,7 @@ Beyond standard model evaluation, **threshold analysis** was conducted to optimi
 
 ![ConfusionMatrixdef](Model%20Performance/ConfusionMatrix_default.png)
 
-### **Optimized Threshold (0.435):**
+### **Optimized Threshold (0.43):**
 - **Accuracy:** 71%
 - **Precision:** 66%
 - **Recall:** 85%
