@@ -1,0 +1,5 @@
+Best Threshold: 0.420
+Test Accuracy: 0.6546
+Test Precision: 0.6042
+Test Recall: 0.8969
+Test F1 Score: 0.7219917012448133
