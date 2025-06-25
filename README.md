@@ -3,7 +3,7 @@
 ## 1. Project Overview
 In this project I built a **logistic regression model** to predict whether a patient is at risk of developing **coronary heart disease (CHD) within the next 10 years**. The dataset comes from the **Framingham Heart Study**, which tracks various health indicators and lifestyle factors.
 
-Beyond standard model evaluation, **threshold analysis** was conducted using the validation set to optimize the decision threshold. This improves the balance between **precision and recall** rather than relying on the default 0.50 threshold, ensuring the model is fine-tuned for real-world application in heart disease risk assessment.
+Beyond standard model evaluation, **threshold analysis** was conducted using a validation set to optimize the decision threshold. This improves the balance between **precision and recall** rather than relying on the default 0.50 threshold, ensuring the model is fine-tuned for real-world application in heart disease risk assessment.
 
 ## 2. Model & Methodology
 - **Logistic Regression:** Chosen for interpretability and its effectiveness in binary classification tasks.
