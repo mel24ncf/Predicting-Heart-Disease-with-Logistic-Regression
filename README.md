@@ -1,15 +1,15 @@
 # Predicting Heart Disease with Logistic Regression - Framingham Heart Study
 
 ## 1. Project Overview
-In this project I build a **logistic regression model** to predict whether a patient is at risk of developing **coronary heart disease (CHD) within the next 10 years**. The dataset comes from the **Framingham Heart Study**, which tracks various health indicators and lifestyle factors.
+In this project I built a **logistic regression model** to predict whether a patient is at risk of developing **coronary heart disease (CHD) within the next 10 years**. The dataset comes from the **Framingham Heart Study**, which tracks various health indicators and lifestyle factors.
 
-Beyond standard model evaluation, **threshold analysis** was conducted to optimize the decision threshold, improving the balance between **precision and recall** rather than relying on the default 0.50 threshold. This ensures the model is fine-tuned for real-world application in heart disease risk assessment.
+Beyond standard model evaluation, **threshold analysis** was conducted to optimize the decision threshold using F1 score. This improves the balance between **precision and recall** rather than relying on the default 0.50 threshold, ensuring the model is fine-tuned for real-world application in heart disease risk assessment.
 
 ## 2. Model & Methodology
 - **Logistic Regression:** Chosen for interpretability and its effectiveness in binary classification tasks.
 - **Data Preprocessing:** Standardization of numerical features and handling of missing values with imputation. Pandas Profiling used for Exploratory Data Analysis.
 - **Class Imbalance Handling:** Undersampling was applied to the No CHD class to address the class imbalance.
-- **Feature Importance:** Feature importance was measured.
+- **Feature Importance:** Feature importance was calculated using the magnitude of the regression coefficients.
 - **Threshold Optimization:** Conducted an F1-score-based threshold analysis to improve classification performance.
 - **Evaluation Metrics:** Accuracy, Precision, Recall, F1-score, and ROC-AUC were analyzed to assess model performance.
 
@@ -42,33 +42,33 @@ Beyond standard model evaluation, **threshold analysis** was conducted to optimi
 | **chd_test.py** | Evaluates the model, conducts threshold analysis, and plots performance metrics (ROC curve, precision-recall tradeoff, confusion matrix) |
 | **util.py** | Holds reusable functions for generating model performance visualizations |
 
-## 5. Model Performance
+## 5. Model Performance (Test)
 ### **Default Threshold (0.50):**
-- **Accuracy:** 72%
-- **Precision:** 74%
-- **Recall:** 68%
-- **F1-score:** 71%
+- **Accuracy:** 71%
+- **Precision:** 73%
+- **Recall:** 66%
+- **F1-score:** 69%
 
 ![ConfusionMatrixdef](Model%20Performance/ConfusionMatrix_default.png)
 
-### **Optimized Threshold (0.43):**
-- **Accuracy:** 71%
-- **Precision:** 66%
-- **Recall:** 85%
-- **F1-score:** 75%
+### **Optimized Threshold (0.42):**
+- **Accuracy:** 65%
+- **Precision:** 60%
+- **Recall:** 90%
+- **F1-score:** 72%
 
 ![ConfusionMatrixopt](Model%20Performance/ConfusionMatrix_optimized.png)
 
 ![Thresh](Model%20Performance/ThresholdAnalysis.png)
 
-### AUC (.77)
+### AUC (.78)
 
 ![ROCAUC](Model%20Performance/ROC_Curve.png)
 
 ### **Insights:**
-- Age, Mean Arterial Pressure (MAP), and sex (male) were identified as the top three most important features for predicting heart disease.
-- The optimized threshold improves the F1-score and results in a significant increase in recall, detecting more heart disease cases without sacrificing too much on precision.
-- The ROC curve analysis shows that the model is providing predictive value significantly above random guessing (random classifier), with an AUC of 0.77, suggesting good overall model performance.
+- Age, Mean Arterial Pressure (MAP), and glucose were identified as the top three most important features for predicting heart disease.
+- The optimized threshold improves F1-score (72%) and recall (90%), detecting more heart disease cases without sacrificing too much on precision.
+- The ROC curve analysis shows that the model is providing predictive value significantly above random guessing, with an AUC of 0.78, suggesting good overall model performance.
 
 ![FeatureImp](Model%20Performance/FeatureImportance.png)
 
